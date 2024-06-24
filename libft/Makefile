@@ -6,9 +6,7 @@ RMDIR		= $(RM) -r
 CFLAGS		= -Wall -Werror -Wextra
 INC_DIR		= ./Includes/
 SRC_DIR		= ./Sources/
-INC_FILES	=	ft_printf.h \
-				get_next_line.h \
-				libft.h
+INC_FILES	=	libft.h
 
 SRCS_FILES 	=	ft_calloc.c  \
 				ft_isalnum.c \

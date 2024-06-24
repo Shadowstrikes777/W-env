@@ -6,21 +6,40 @@
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:42:53 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/03/03 18:20:27 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/06/24 11:09:55 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 50
+# endif
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define CONVC "cspdiuxX%"
+# define BASE10 "0123456789"
+# define BASE16 "0123456789abcdef"
+# define BASE16M "0123456789ABCDEF"
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+char				*ft_strjoin(const char *s1, const char *s2);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
+char				*ft_strdup(const char *s);
+size_t				gnl_strlen(const char *s);
+char				*ft_substr(const char *s, unsigned int start, size_t len);
+char				*get_next_line(int fd);
+int					ft_printf(const char *s, ...);
+int					ft_putstr(const char *s);
+int					ft_ptr(void *ptr);
+int					ft_putnbrbase(int n, const char *base);
+int					ft_puthex(unsigned long long n, const char *base);
+int					ft_putchar(int c);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);

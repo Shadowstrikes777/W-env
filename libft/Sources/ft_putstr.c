@@ -6,11 +6,11 @@
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:01:30 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/03/13 18:14:27 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/06/24 11:06:04 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_putstr(const char *s)
 {

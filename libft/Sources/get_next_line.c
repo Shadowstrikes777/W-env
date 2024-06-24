@@ -6,14 +6,14 @@
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:27:13 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/04/29 09:23:14 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/06/24 11:12:56 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*getrestandline(char **stock, char **line);
-static char	*ft_strchr(const char *s, int c);
+static char	*ft_mitady(const char *s, int c);
 static char	*readandstock(int fd, char **stock);
 
 static char	*readandstock(int fd, char **stock)
@@ -27,7 +27,7 @@ static char	*readandstock(int fd, char **stock)
 	if (!buffer)
 		return (NULL);
 	rd = 1;
-	while (rd > 0 && !ft_strchr(readed, '\n'))
+	while (rd > 0 && !ft_mitady(readed, '\n'))
 	{
 		rd = read(fd, buffer, BUFFER_SIZE);
 		if (rd <= -1)
@@ -59,7 +59,7 @@ static char	*getrestandline(char **stock, char **line)
 	return (rest);
 }
 
-static char	*ft_strchr(const char *s, int c)
+static char	*ft_mitady(const char *s, int c)
 {
 	char			*p;
 	unsigned char	d;
