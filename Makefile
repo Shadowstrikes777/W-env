@@ -9,7 +9,9 @@ LIBFT		= ./libft/
 LIBMLX		= ./minilibx/
 IFLAGS		= -I$(INC_DIR) -I$(LIBFT)Includes -I$(LIBMLX)
 LFLAGS		= -lm -lmlx -lXext -lX11 -L$(LIBFT) -lft -L$(LIBMLX) -lmlx_Linux
-INC_FILES	= mlx_basics.h utils.h fractol.h #TO DO
+INC_FILES	= mlx_basics.h \
+				utils.h \
+				fractol.h #TO DO
 SRC_FILES	= start.c \
 				main.c \
 				check_errors.c 
