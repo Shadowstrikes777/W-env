@@ -6,11 +6,11 @@
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:36:43 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/24 16:17:13 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/06/27 15:36:12 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "m_basic.h"
+#include "fractol.h"
 /*
 Julia and mandelbrot
 infinite zoom

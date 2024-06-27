@@ -1,50 +1,47 @@
-NAME        = fractol
-CC          = cc
-RM          = rm -f
-RMDIR       = $(RM) -d
-CFLAGS      = -Wall -Werror -Wextra -g
+TARGET		= fractol
+CC			= cc
+CFLAGS		= -Wall -Werror -Wextra -g
 
-INC_DIR     = ./Includes/
-SRC_DIR     = ./Sources/
+OBJ_DIR		= ./bin/
+INC_DIR		= ./Includes/
+SRC_DIR		= ./Src/
 
-LIBFT       = ./libft/
-LIBMLX      = ./minilibx/
+LIBFT		= ./libft/
+LIBMLX		= ./minilibx/
 
-IFLAGS      = -I$(INC_DIR) -I$(LIBFT)Includes -I$(LIBMLX)
-LFLAGS      = -lm -lmlx -lXext -lX11 -L$(LIBFT) -lft -L$(LIBMLX) -lmlx_Linux
+IFLAGS		= -I$(INC_DIR) -I$(LIBFT)Includes -I$(LIBMLX)
+LFLAGS		= -L$(LIBFT) -lft -L$(LIBMLX) -lmlx_Linux -lm -lmlx -lXext -lX11 
 
-INC_FILES   = mlx_basics.h \
-              utils.h \
-              fractol.h #TO DO
+INC		= m_basic.h utils.h fractol.h
 
-SRC_FILES   = main.c \
-              check_errors.c 
-              #start.c \ TO DO
+SRC_FILES	= check_errors.c main.c
 
-OBJECTS     = $(SRC_FILES:.c=.o)
+SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
+INCS		= $(addprefix $(INC_DIR), $(INC))
+OBJS		= $(SRC_FILES:%.c=$(OBJ_DIR)%.o)
 
-SOURCES     = $(addprefix $(SRC_DIR), $(SRC_FILES))
-INCLUDES    = $(addprefix $(INC_DIR), $(INC_FILES))
+all: $(TARGET)
 
-all: $(NAME)
+$(TARGET): $(OBJ_DIR) $(OBJS) $(INCS)
+		@$(MAKE) -C $(LIBFT)
+		@$(MAKE) -C $(LIBMLX)
+		@$(CC) -o $@ $(OBJS) $(LFLAGS)
 
-$(NAME): $(OBJECTS)
-    make -C $(LIBFT)
-    make -C $(LIBMLX)
-    $(CC) -o $@ $(OBJECTS) $(LFLAGS)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCS)
+		@$(CC) -c $(IFLAGS) -o $@ $< $(CFLAGS)
 
-$(SRC_DIR)%.o: $(SRC_DIR)%.c $(INCLUDES)
-    $(CC) -c $(IFLAGS) $(CFLAGS) $< -o $@
+$(OBJ_DIR):
+		@mkdir -p $(OBJ_DIR)
 
 clean:
-    make -C $(LIBFT) clean
-    make -C $(LIBMLX) clean
-    $(RM) $(OBJECTS)
+		@$(MAKE) -C $(LIBFT) clean
+		@rm -rf $(OBJ_DIR)
 
 fclean: clean
-    make -C $(LIBFT) fclean
-    $(RM) $(NAME)
+		@$(MAKE) -C $(LIBFT) fclean
+		@$(MAKE) -C $(LIBMLX) clean
+		@rm -f $(TARGET)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re $(OBJ_DIR)

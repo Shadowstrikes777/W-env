@@ -6,17 +6,11 @@
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:35:56 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/24 16:19:44 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/06/27 16:11:21 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_printparameters()
-{
-	ft_printf("Options :\n");
-	ft_printf("");
-}
+#include "fractol.h"
 
 void	check_errors(int argc, char **argv)
 {
