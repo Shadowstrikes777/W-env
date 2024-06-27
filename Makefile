@@ -14,7 +14,8 @@ LFLAGS		= -L$(LIBFT) -lft -L$(LIBMLX) -lmlx_Linux -lm -lmlx -lXext -lX11
 
 INC		= m_basic.h utils.h fractol.h
 
-SRC_FILES	= check_errors.c main.c startmlx.c
+SRC_FILES	= check_errors.c main.c \
+				startmlx.c mlx_utils.c
 
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 INCS		= $(addprefix $(INC_DIR), $(INC))

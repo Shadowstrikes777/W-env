@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   startmlx.c                                         :+:      :+:    :+:   */
+/*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 14:21:52 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/06/27 17:31:53 by mmaevani         ###   ########.fr       */
+/*   Created: 2024/06/27 17:20:20 by mmaevani          #+#    #+#             */
+/*   Updated: 2024/06/27 17:21:28 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "m_basic.h"
+#include "fractol.h"
 
-void	start_mlx()
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	// TO DO 
-	void	*mlx;
-	void	*mlx_win;
+	char *dst;
 
-	mlx= mlx_init(); // init
-	mlx_win = mlx_new_window(mlx, WINDOW_W, WINDOW_H, "Hello world!");
-	mlx_loop(mlx);
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }
