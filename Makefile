@@ -14,7 +14,7 @@ LFLAGS		= -L$(LIBFT) -lft -L$(LIBMLX) -lmlx_Linux -lm -lmlx -lXext -lX11
 
 INC		= m_basic.h utils.h fractol.h
 
-SRC_FILES	= check_errors.c main.c
+SRC_FILES	= check_errors.c main.c startmlx.c
 
 SRCS		= $(addprefix $(SRC_DIR), $(SRC_FILES))
 INCS		= $(addprefix $(INC_DIR), $(INC))
@@ -25,10 +25,10 @@ all: $(TARGET)
 $(TARGET): $(OBJ_DIR) $(OBJS) $(INCS)
 		@$(MAKE) -C $(LIBFT)
 		@$(MAKE) -C $(LIBMLX)
-		@$(CC) -o $@ $(OBJS) $(LFLAGS)
+		@$(CC) -o $@ $(OBJS) $(LFLAGS) $(CFLAGS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCS)
-		@$(CC) -c $(IFLAGS) -o $@ $< $(CFLAGS)
+		@$(CC) -c $(IFLAGS) -o $@ $< #$(CFLAGS)
 
 $(OBJ_DIR):
 		@mkdir -p $(OBJ_DIR)
