@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <mmaevani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:10:34 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/02/26 16:27:43 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:18:17 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,3 @@ char	*ft_strdup(const char *s)
 		ft_strcpy(ptr, s);
 	return (ptr);
 }
-/*#include <stdio.h>
-
-int main() {
-    const char *original = "Hello, World!";
-    char *duplicate = ft_strdup(original);
-
-    if (duplicate != NULL) {
-        printf("Original string: %s\n", original);
-        printf("Duplicate string: %s\n", duplicate);
-        free(duplicate); // Free the memory allocated by ft_strdup
-    } else {
-        printf("Memory allocation failed.\n");
-    }
-
-    return 0;
-}*/

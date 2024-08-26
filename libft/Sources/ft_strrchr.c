@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmaevani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmaevani <mmaevani@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 11:19:05 by mmaevani          #+#    #+#             */
-/*   Updated: 2024/02/21 11:54:15 by mmaevani         ###   ########.fr       */
+/*   Updated: 2024/08/15 07:16:51 by mmaevani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char *p;
-	p = ft_strrchr("teste", 0);
-	printf("%s\n", p);
-}*/

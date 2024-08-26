@@ -65,16 +65,16 @@ OBJ = $(SOURCES:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDES)
-		$(AR) $(NAME) $(OBJ)
+		@$(AR) $(NAME) $(OBJ)
 
 %.o: %.c $(INCLUDES)
-	$(CC) -c -I $(INC_DIR) -o $@ $< $(CFLAGS) 
+	@$(CC) -c -I $(INC_DIR) -o $@ $< $(CFLAGS) 
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
