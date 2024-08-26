@@ -4,8 +4,8 @@ AR			= ar rcs
 RM			= rm -f
 RMDIR		= $(RM) -r
 CFLAGS		= -Wall -Werror -Wextra
-INC_DIR		= ./Includes/
-SRC_DIR		= ./Sources/
+INC_DIR		= ./inc/
+SRC_DIR		= ./src/
 INC_FILES	=	libft.h
 
 SRCS_FILES 	=	ft_calloc.c  \
